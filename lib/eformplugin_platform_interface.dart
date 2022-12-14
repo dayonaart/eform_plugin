@@ -23,7 +23,7 @@ abstract class EformpluginPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> openDoa({String? route}) {
+  Future<void> openDoa({String? route}) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 }

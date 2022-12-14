@@ -10,8 +10,7 @@ class MethodChannelEformplugin extends EformpluginPlatform {
   final methodChannel = const MethodChannel('eformplugin');
 
   @override
-  Future<String?> openDoa({String? route}) async {
+  Future<void> openDoa({String? route}) async {
     final version = await methodChannel.invokeMethod<String>('openDoa', route);
-    return version;
   }
 }

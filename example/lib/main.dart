@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:eformplugin/eformplugin.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    home: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -10,17 +12,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: SafeArea(
-          child: Scaffold(
-        body: Center(
-          child: ElevatedButton(
-              onPressed: () async {
-                await _doaPlugin.openDoa();
-              },
-              child: const Text("Open Doa")),
-        ),
-      )),
-    );
+    return SafeArea(
+        child: Scaffold(
+      body: Center(
+        child: ElevatedButton(
+            onPressed: () async => await _doaPlugin.openDoa(context),
+            child: const Text("Open Doa")),
+      ),
+    ));
   }
 }

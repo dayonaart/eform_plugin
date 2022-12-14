@@ -1,10 +1,16 @@
 import 'package:eformplugin/doa/lib/run_doa.dart';
-import 'eformplugin_platform_interface.dart';
+import 'package:flutter/material.dart';
 
 class Eformplugin {
-  Future<String?> openDoa({String? route}) async {
-    var route = await EformpluginPlatform.instance.openDoa();
-    runDoa(route: route);
-    return "opening doa $route";
+  Future<void> openDoa(
+    BuildContext? context, {
+    String? route,
+  }) async {
+    assert(context != null);
+    await showDialog(
+        context: context!,
+        builder: (context) {
+          return DoaApp(route: route);
+        });
   }
 }

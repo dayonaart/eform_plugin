@@ -8,7 +8,7 @@ class MockEformpluginPlatform
     with MockPlatformInterfaceMixin
     implements EformpluginPlatform {
   @override
-  Future<String?> openDoa({String? route}) => Future.value('42');
+  Future<void> openDoa({String? route}) => Future.value('42');
 }
 
 void main() {
@@ -22,7 +22,6 @@ void main() {
     Eformplugin eformpluginPlugin = Eformplugin();
     MockEformpluginPlatform fakePlatform = MockEformpluginPlatform();
     EformpluginPlatform.instance = fakePlatform;
-
-    expect(await eformpluginPlugin.openDoa(), '42');
+    await eformpluginPlugin.openDoa(null);
   });
 }

@@ -19,6 +19,6 @@ void main() {
   });
 
   test('openDoa', () async {
-    expect(await platform.openDoa(), '42');
+    await platform.openDoa();
   });
 }
