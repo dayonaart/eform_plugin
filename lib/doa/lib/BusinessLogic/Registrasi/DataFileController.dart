@@ -23,7 +23,7 @@ import 'package:flutter/services.dart';
 // import 'package:flutter_active_passive_liveness/gesture_type.dart';
 // import 'package:flutter_active_passive_liveness/schema_type.dart';
 import 'package:flutter_exif_rotation/flutter_exif_rotation.dart';
-import 'package:flutter_image_compress/flutter_image_compress.dart';
+// import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
@@ -278,64 +278,65 @@ class DataFileController extends GetxController {
   }
 
   getCompressImageFromBase64(List<String> value) async {
-    try {
-      List listImage = [];
-      var decodedImage;
-      for (var a = 0; a < value.length; a++) {
-        Uint8List result = await FlutterImageCompress.compressWithList(
-          base64Decode(value[a]),
-          quality: 20,
-        );
-        // print(result.length);
-        // print(result.lengthInBytes);
-        if (value.length > 1) {
-          // print("lebih dari 1");
-          // print("a $a");
-          if (a == 0) {
-            // print("masuk 0");
-            decodedImage = await decodeImageFromList(result);
-            // print("decodedImage.height ${decodedImage.height}");
-          }
+    return null;
+    // try {
+    //   List listImage = [];
+    //   var decodedImage;
+    //   for (var a = 0; a < value.length; a++) {
+    //     Uint8List result = await FlutterImageCompress.compressWithList(
+    //       base64Decode(value[a]),
+    //       quality: 20,
+    //     );
+    //     // print(result.length);
+    //     // print(result.lengthInBytes);
+    //     if (value.length > 1) {
+    //       // print("lebih dari 1");
+    //       // print("a $a");
+    //       if (a == 0) {
+    //         // print("masuk 0");
+    //         decodedImage = await decodeImageFromList(result);
+    //         // print("decodedImage.height ${decodedImage.height}");
+    //       }
 
-          listImage.add(
-            AspectRatio(
-              aspectRatio: decodedImage.width / (decodedImage.height - 15),
-              child: new Container(
-                margin: EdgeInsets.all(2),
-                decoration: new BoxDecoration(
-                    image: new DecorationImage(
-                  fit: BoxFit.fitWidth,
-                  alignment: FractionalOffset.topCenter,
-                  image: MemoryImage(
-                    result,
-                  ),
-                )),
-              ),
-            ),
-          );
-        } else {
-          // print("Masuk else");
-          listImage.add(
-            AspectRatio(
-              aspectRatio: 3 / 2,
-              child: new Container(
-                decoration: new BoxDecoration(
-                    image: new DecorationImage(
-                  fit: BoxFit.fitWidth,
-                  alignment: Alignment(0.0, -0.6),
-                  image: MemoryImage(
-                    result,
-                  ),
-                )),
-              ),
-            ),
-          );
-        }
-      }
-      return listImage;
-    } catch (err) {
-      print(err);
-    }
+    //       listImage.add(
+    //         AspectRatio(
+    //           aspectRatio: decodedImage.width / (decodedImage.height - 15),
+    //           child: new Container(
+    //             margin: EdgeInsets.all(2),
+    //             decoration: new BoxDecoration(
+    //                 image: new DecorationImage(
+    //               fit: BoxFit.fitWidth,
+    //               alignment: FractionalOffset.topCenter,
+    //               image: MemoryImage(
+    //                 result,
+    //               ),
+    //             )),
+    //           ),
+    //         ),
+    //       );
+    //     } else {
+    //       // print("Masuk else");
+    //       listImage.add(
+    //         AspectRatio(
+    //           aspectRatio: 3 / 2,
+    //           child: new Container(
+    //             decoration: new BoxDecoration(
+    //                 image: new DecorationImage(
+    //               fit: BoxFit.fitWidth,
+    //               alignment: Alignment(0.0, -0.6),
+    //               image: MemoryImage(
+    //                 result,
+    //               ),
+    //             )),
+    //           ),
+    //         ),
+    //       );
+    //     }
+    //   }
+    //   return listImage;
+    // } catch (err) {
+    //   print(err);
+    // }
   }
 
   get bodyCekLiveness async {
