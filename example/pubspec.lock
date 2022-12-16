@@ -133,7 +133,7 @@ packages:
       name: connectivity_plus
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.3.9"
+    version: "1.4.0"
   connectivity_plus_linux:
     dependency: transitive
     description:
