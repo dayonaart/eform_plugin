@@ -136,7 +136,7 @@ dependencies:
   #     url: https://gitlab+deploy-token-3:v8vuFV6a-p53EN56xYzE@gitlab.bni.co.id/bbc/flutter-package/jwtson.git
   #     ref : Development
   # device_platform_info: ^1.0.0
-  google_mlkit_face_detection: ^0.5.0
+  google_mlkit_face_detection: ^0.2.0
   # encryptrsa:
   #   git:
   #     url: https://gitlab+deploy-token-5:QUyvX-LAmZX8L5FYCxb2@gitlab.bni.co.id/bbc/flutter-package/loadkeyencryptpin-libc.git
